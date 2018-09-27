@@ -29,7 +29,7 @@ app.get('/accounts', (req, res, next) => {
 // app.param is a middleware that allows us to use the findById function every
 // time 'id' is called in the request
 app.param('id', (req, res, next) => {
-  Account.findAccount(req.params.id, (error, account) => {
+  Account.findById(req.params.id, (error, account) => {
     req.account = account
     next()
   })
